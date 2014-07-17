@@ -32,9 +32,12 @@ import org.gvlabs.math.utils.Interval;
 public class BissectionMethod extends AbstractMethod {
 
 	@Override
-	public BigDecimal findARoot(BigDecimal a, BigDecimal b,
+	public BigDecimal findARoot(BigDecimal aP, BigDecimal bP,
 			BigDecimal precision, Function f, long maxIter) {
 
+		BigDecimal a = aP;
+		BigDecimal b = bP;
+		
 		for (long k = 0; k < maxIter; k++) {
 
 			// x = (a + b)/2
