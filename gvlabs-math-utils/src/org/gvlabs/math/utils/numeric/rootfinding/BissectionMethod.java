@@ -37,7 +37,7 @@ public class BissectionMethod extends AbstractMethod {
 
 		BigDecimal a = aP;
 		BigDecimal b = bP;
-		
+
 		for (long k = 0; k < maxIter; k++) {
 
 			// x = (a + b)/2
@@ -63,6 +63,15 @@ public class BissectionMethod extends AbstractMethod {
 		return null;
 	}
 
+	/**
+	 * Estimate the number of iterations necessary to find a root
+	 * 
+	 * @param i
+	 *            interval
+	 * @param precision
+	 *            precision
+	 * @return number of iterations necessary to find a root
+	 */
 	public long estimateMaxIter(Interval i, BigDecimal precision) {
 		// (log_10(b - a) - log(precision))/log_10(2)
 		return (long) Math.ceil((Math.log10(i.getB().subtract(i.getA())
