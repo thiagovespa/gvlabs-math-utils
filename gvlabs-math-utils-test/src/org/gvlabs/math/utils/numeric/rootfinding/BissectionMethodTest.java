@@ -81,6 +81,9 @@ public class BissectionMethodTest {
 	public void testEstimateMaxIter() {
 		assertEquals("The estimative value must be 7", 7,
 				bm.estimateMaxIter(i1, new BigDecimal(0.01)));
+		
+		assertEquals("The estimative value must be 10", 10,
+				bm.estimateMaxIter(i2, new BigDecimal(0.001)));
 
 	}
 
