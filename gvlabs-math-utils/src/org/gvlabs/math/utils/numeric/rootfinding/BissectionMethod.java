@@ -20,13 +20,14 @@ import java.math.BigDecimal;
 
 import org.gvlabs.math.utils.CommonValues;
 import org.gvlabs.math.utils.Function;
+import org.gvlabs.math.utils.Interval;
 
 /**
  * Bissection Root Finding Method
  * 
  * @author Thiago Galbiatti Vespa
  * @version 1.0
- *
+ * 
  */
 public class BissectionMethod extends AbstractMethod {
 
@@ -38,7 +39,7 @@ public class BissectionMethod extends AbstractMethod {
 
 			// x = (a + b)/2
 			BigDecimal x = a.add(b).divide(CommonValues.TWO.getValue());
-			
+
 			// (b - a) < precision
 			if (b.subtract(a).compareTo(precision) < 0) {
 				// result a or b is ok too
@@ -57,6 +58,13 @@ public class BissectionMethod extends AbstractMethod {
 		}
 		// found no root
 		return null;
+	}
+
+	public long estimateMaxIter(Interval i, BigDecimal precision) {
+		// (log_10(b - a) - log(precision))/log_10(2)
+		return (long) Math.ceil((Math.log10(i.getB().subtract(i.getA())
+				.doubleValue()) - Math.log10(precision.doubleValue())
+				/ Math.log10(2.0)));
 	}
 
 }
