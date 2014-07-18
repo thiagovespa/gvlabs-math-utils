@@ -22,13 +22,14 @@ import org.gvlabs.math.utils.Function;
 import org.gvlabs.math.utils.Interval;
 
 /**
- * Abstract Finding Root Method Class
+ * Abstract Finding Root Method Class using an interval and precision
+ * We have two stop point: by precision or maximum number of iterations
  * 
  * @author Thiago Galbiatti Vespa
- * @version 1.0
+ * @version 1.1
  * 
  */
-public abstract class AbstractMethod {
+public abstract class AbstractIntervalMethod {
 
 	/**
 	 * Try to find a root
