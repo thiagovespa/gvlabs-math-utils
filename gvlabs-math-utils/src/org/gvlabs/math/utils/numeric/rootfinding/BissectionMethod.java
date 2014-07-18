@@ -29,7 +29,7 @@ import org.gvlabs.math.utils.Interval;
  * @version 1.0
  * 
  */
-public class BissectionMethod extends AbstractMethod {
+public class BissectionMethod extends AbstractIntervalMethod {
 
 	@Override
 	public BigDecimal findARoot(BigDecimal aP, BigDecimal bP,
