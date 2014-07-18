@@ -29,7 +29,7 @@ import org.gvlabs.math.utils.Interval;
  * @version 1.1
  * 
  */
-public abstract class AbstractIntervalMethod {
+public abstract class AbstractBracketingMethod {
 
 	/**
 	 * Try to find a root
